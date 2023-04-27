@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C4CBE3">
+
+    <!-- App name -->
+    <!-- App name -->
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="HelmetPro"
+        android:textColor="#2962FF"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <!-- Email label -->
+    <TextView
+        android:id="@+id/tvEmailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAppName"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:text="Email"
+        android:textColor="#2962FF"
+        android:textSize="18sp" />
+
+    <!-- Email value -->
+    <TextView
+        android:id="@+id/tvEmailValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEmailLabel"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="example@example.com"
+        android:textColor="#757575"
+        android:textSize="18sp" />
+
+    <!-- Password label -->
+    <TextView
+        android:id="@+id/tvPasswordLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEmailValue"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Password"
+        android:textColor="#2962FF"
+        android:textSize="18sp" />
+
+    <!-- Password value -->
+    <TextView
+        android:id="@+id/tvPasswordValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPasswordLabel"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="******"
+        android:textColor="#757575"
+        android:textSize="18sp" />
+
+    <!-- Name label -->
+    <TextView
+        android:id="@+id/tvNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPasswordValue"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Name"
+        android:textColor="#2962FF"
+        android:textSize="18sp" />
+
+    <!-- Name value -->
+    <TextView
+        android:id="@+id/tvNameValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNameLabel"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="John Doe"
+        android:textColor="#757575"
+        android:textSize="18sp"
+
+        />
+
+</RelativeLayout>

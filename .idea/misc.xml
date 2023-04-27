@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/eventosdisponiveis.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/login.xml" value="0.25" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/register.xml" value="0.25" />
+        <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/userinfopage.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -1,7 +1,9 @@
 package com.example.projectfactory;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,10 +59,29 @@ public class login extends AppCompatActivity {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                // Handle success response
-                                Toast.makeText(login.this, "Login successful!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(login.this, MainActivity.class);
-                                startActivity(intent);
+                                try {
+                                    // Get user id from response
+                                    int userId = response.getInt("user_id");
+
+                                    // Save user id to preferences
+                                    SharedPreferences preferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putInt("userId", userId);
+                                    editor.apply();
+
+                                    // Handle success response
+                                    Toast.makeText(login.this, "Login successful!", Toast.LENGTH_SHORT).show();
+
+                                    // Log user id
+                                    Log.d("Login", "User id: " + userId);
+
+                                    // Start user information activity
+                                    Intent intent = new Intent(login.this, userInfopage.class);
+                                    startActivity(intent);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         },
                         new Response.ErrorListener() {
