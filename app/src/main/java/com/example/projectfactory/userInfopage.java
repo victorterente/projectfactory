@@ -28,6 +28,7 @@ public class userInfopage extends AppCompatActivity {
     private Button buttonUpdateStatus; // Add this line
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userinfopage);
@@ -85,6 +86,7 @@ public class userInfopage extends AppCompatActivity {
         // add API request to Volley queue
         queue.add(jsonObjectRequest);
 
+
         // set click listener for update status button
         buttonUpdateStatus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +125,11 @@ public class userInfopage extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
             }
+
         });
+
     }
+
 }

@@ -76,7 +76,7 @@ public class login extends AppCompatActivity {
                                     Log.d("Login", "User id: " + userId);
 
                                     // Start user information activity
-                                    Intent intent = new Intent(login.this, userInfopage.class);
+                                    Intent intent = new Intent(login.this, ListaDeEventos.class);
                                     startActivity(intent);
 
                                 } catch (JSONException e) {

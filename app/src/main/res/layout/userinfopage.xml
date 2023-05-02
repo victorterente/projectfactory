@@ -105,4 +105,16 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
+    <Button
+        android:id="@+id/btnDeleteAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnRequestModeratorPermission"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="#FF0000"
+        android:text="Delete Account"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
 </RelativeLayout>

@@ -25,6 +25,10 @@
             android:name=".userInfopage"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".ListaDeEventos"
+            android:exported="true">
+        </activity>
 
         <activity
             android:name=".MainActivity">
