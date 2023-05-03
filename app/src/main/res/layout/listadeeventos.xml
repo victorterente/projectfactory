@@ -17,13 +17,13 @@
         android:textStyle="bold" />
 
     <!-- Event list -->
+
+    <!-- Event name text view -->
     <ListView
         android:id="@+id/event_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         />
+        android:layout_height="match_parent" />
 
-    <!-- Event name text view -->
     <TextView
         android:id="@+id/event_name_text_view"
         android:layout_width="match_parent"

@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/drawable/event_list_selector.xml" value="0.13229166666666667" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/eventoinfo.xml" value="0.11927083333333334" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/eventosdisponiveis.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/listadeeventos.xml" value="0.176" />
+        <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/listadeeventos.xml" value="0.2" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/login.xml" value="0.25" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/register.xml" value="0.25" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/userinfopage.xml" value="0.1" />

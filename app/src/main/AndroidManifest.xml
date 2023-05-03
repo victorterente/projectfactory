@@ -29,6 +29,10 @@
             android:name=".ListaDeEventos"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".eventoinfo"
+            android:exported="true">
+        </activity>
 
         <activity
             android:name=".MainActivity">
