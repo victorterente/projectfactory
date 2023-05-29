@@ -15,7 +15,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/buttonDadosEventos"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="98dp"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintHorizontal_bias="1.0" android:textAlignment="viewStart"/>
     <Button
             android:text="Dados dos Eventos"
             android:layout_width="226dp"
@@ -24,7 +24,7 @@
             app:layout_constraintTop_toBottomOf="@+id/buttonListaEventos" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="156dp" android:layout_marginEnd="161dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.454"
-            android:onClick="onClickDadosEventos"/>
+            android:onClick="onClickDadosEventos" android:textAlignment="viewStart"/>
     <Button
             android:text="Lista de Eventos"
             android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="162dp"
             app:layout_constraintHorizontal_bias="0.825"
-            android:onClick="onClickEventList"/>
+            android:onClick="onClickEventList" android:textAlignment="viewStart"/>
     <Button
             android:text="User Info"
             android:layout_width="131dp"
@@ -44,7 +44,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:onClick="onClickUserInfo" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="96dp"
-    />
+            android:textAlignment="viewStart"/>
     <TextView
             android:text="MENU"
             android:layout_width="wrap_content"
