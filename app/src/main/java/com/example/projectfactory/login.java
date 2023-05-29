@@ -77,7 +77,7 @@ public class login extends AppCompatActivity {
 
                                     // Start user information activity
 
-                                    Intent intent = new Intent(login.this, eventlist.class);
+                                    Intent intent = new Intent(login.this, Detalhes.class);
 
 
 
