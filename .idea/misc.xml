@@ -4,8 +4,6 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/pedro/OneDrive/Documents/GitHub/projectfactory/app/src/main/res/drawable/event_list_selector.xml" value="0.2635416666666667" />
-        <entry key="..\:/Users/pedro/OneDrive/Documents/GitHub/projectfactory/app/src/main/res/layout/activity_criar_evento.xml" value="0.24818840579710144" />
-        <entry key="..\:/Users/pedro/OneDrive/Documents/GitHub/projectfactory/app/src/main/res/layout/activity_detalhes.xml" value="0.24818840579710144" />
         <entry key="..\:/Users/pedro/OneDrive/Documents/GitHub/projectfactory/app/src/main/res/layout/activity_main.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/pedro/OneDrive/Documents/GitHub/projectfactory/app/src/main/res/layout/eventoinfo.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/pedro/OneDrive/Documents/GitHub/projectfactory/app/src/main/res/layout/listadeeventos.xml" value="0.24739583333333334" />
@@ -14,8 +12,10 @@
         <entry key="..\:/Users/pedro/OneDrive/Documents/GitHub/projectfactory/app/src/main/res/layout/userinfopage.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/drawable/event_list_selector.xml" value="0.13229166666666667" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/activity_criarevento.xml" value="0.25" />
+        <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/activity_detalhes.xml" value="0.115625" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/activity_eventlist.xml" value="0.25" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/activity_meuseventos.xml" value="0.25" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/eventoinfo.xml" value="0.11927083333333334" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/eventosdisponiveis.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/victo/AndroidStudioProjects/projectfactory/app/src/main/res/layout/listadeeventos.xml" value="0.2" />

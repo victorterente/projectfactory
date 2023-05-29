@@ -20,7 +20,7 @@ public class Detalhes extends AppCompatActivity {
     }
 
     public void onClickEventList(View v) {
-        Intent intent = new Intent(getApplicationContext(), ListaDeEventos.class);
+        Intent intent = new Intent(getApplicationContext(), eventlist.class);
         startActivity(intent);
     }
 
@@ -28,9 +28,10 @@ public class Detalhes extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), DadosEventos.class);
         startActivity(intent);
     }
+    */
 
     public void onClickMeusEventos(View v) {
-        Intent intent = new Intent(getApplicationContext(), MeusEventos.class);
+        Intent intent = new Intent(getApplicationContext(), meuseventos.class);
         startActivity(intent);
-    }*/
+    }
 }
