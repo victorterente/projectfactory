@@ -31,22 +31,13 @@ public class EventoListAdapter extends ArrayAdapter<Evento> {
         }
 
         // Lookup view for data population
-        TextView eventoNome = convertView.findViewById(R.id.evento_nome);
+
 
         // Populate the data into the template view using the data object
-        eventoNome.setText(evento.getNome());
+
 
         // Set the click listener for the event name
-        eventoNome.setOnClickListener(v -> {
-            // Start the EventoInfo activity with the event information
-            Intent intent = new Intent(context, eventoinfo.class);
-            intent.putExtra("evento_nome", evento.getNome());
-            intent.putExtra("evento_descricao", evento.getDescricao());
-            intent.putExtra("evento_data", evento.getData());
-            intent.putExtra("evento_end", evento.getEnd());
-            intent.putExtra("evento_start", evento.getStart());
-            context.startActivity(intent);
-        });
+
 
         // Return the completed view to render on screen
         return convertView;
