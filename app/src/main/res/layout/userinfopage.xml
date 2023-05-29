@@ -94,16 +94,16 @@
         />
 
     <Button
-        android:id="@+id/btnRequestModeratorPermission"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvNameValue"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:background="#2962FF"
-        android:text="Request Moderator Permission"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+            android:id="@+id/btnRequestModeratorPermission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNameValue"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:background="#2962FF"
+            android:text="Request Moderator Permission"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"/>
 
     <Button
         android:id="@+id/btnDeleteAccount"
