@@ -1,4 +1,5 @@
 package com.example.projectfactory;
+import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
@@ -130,6 +131,11 @@ public class userInfopage extends AppCompatActivity {
 
         });
 
+    }
+
+    public void onClickLogout(View v) {
+        Intent intent = new Intent(getApplicationContext(), login.class);
+        startActivity(intent);
     }
 
 }

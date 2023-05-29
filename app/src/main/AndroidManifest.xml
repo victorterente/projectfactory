@@ -11,31 +11,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projectfactory">
+
         <activity
             android:name=".eventlist"
             android:exported="true" />
+
+       
+
         <activity
-            android:name=".criarevento"
+            android:name=".CriarEvento"
             android:exported="true" />
+
+        <activity
+            android:name=".Detalhes"
+            android:exported="true" />
+
         <activity
             android:name=".login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".userInfopage"
             android:exported="true" />
+
         <activity
             android:name=".ListaDeEventos"
             android:exported="true" />
+
         <activity
             android:name=".eventoinfo"
             android:exported="true" />
-        <activity android:name=".MainActivity" />
+
+        <activity
+            android:name=".MainActivity" />
+
     </application>
 
 </manifest>
