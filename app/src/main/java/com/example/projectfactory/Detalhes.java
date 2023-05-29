@@ -24,7 +24,7 @@ public class Detalhes extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickDadosEventos(View v) {
+    /*public void onClickDadosEventos(View v) {
         Intent intent = new Intent(getApplicationContext(), DadosEventos.class);
         startActivity(intent);
     }
@@ -32,5 +32,5 @@ public class Detalhes extends AppCompatActivity {
     public void onClickMeusEventos(View v) {
         Intent intent = new Intent(getApplicationContext(), MeusEventos.class);
         startActivity(intent);
-    }
+    }*/
 }
