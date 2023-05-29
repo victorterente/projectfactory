@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_header"
-            android:text="Start:"
+            android:text="Start Time:"
             android:textSize="16sp" />
 
     <EditText
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/edit_start"
-            android:text="End:"
+            android:text="End Time:"
             android:textSize="16sp" />
 
     <EditText
@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/edit_end"
-            android:text="Name:"
+            android:text="Event Name:"
             android:textSize="16sp" />
 
     <EditText
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/edit_name"
-            android:text="Date:"
+            android:text="Event Date:"
             android:textSize="16sp" />
 
     <EditText
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/edit_date"
-            android:text="Description:"
+            android:text="Event Description:"
             android:textSize="16sp" />
 
     <EditText
