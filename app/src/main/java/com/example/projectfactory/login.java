@@ -105,4 +105,9 @@ public class login extends AppCompatActivity {
             }
         });
     }
+
+    public void onRegisterButtonClick(View v) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
 }

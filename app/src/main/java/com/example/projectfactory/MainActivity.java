@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), "Welcome !"+ nome.getText().toString(), Toast.LENGTH_SHORT).show();
 
+                        startActivity(new Intent(MainActivity.this, login.class));
+
                         // Debugging statement
                         Log.d("Id", "ID: " + LoginDataSource.ID);
 

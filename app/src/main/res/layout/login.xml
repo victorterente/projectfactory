@@ -51,18 +51,33 @@
         android:textSize="18sp" />
 
     <!-- Login button -->
+
     <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etPassword"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="32dp"
-        android:background="#FFFFFF"
-        android:onClick="onLoginButtonClick"
-        android:text="Login"
-        android:textColor="#00796B"
-        android:textSize="18sp" />
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etPassword"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="32dp"
+            android:background="#FFFFFF"
+            android:onClick="onLoginButtonClick"
+            android:text="Login"
+            android:textColor="#00796B"
+            android:textSize="18sp"/>
+    <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etPassword"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="113dp"
+            android:layout_marginEnd="32dp"
+            android:background="#FFFFFF"
+            android:onClick="onRegisterButtonClick"
+            android:text="Register"
+            android:textColor="#00796B"
+            android:textSize="18sp"/>
+
 
 </RelativeLayout>
