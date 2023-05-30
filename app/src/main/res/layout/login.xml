@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#009688">
+    android:background="#0888CC">
 
     <!-- App name -->
     <TextView
         android:id="@+id/tvAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HelmetPro"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp"
-        android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="96dp" />
+        android:layout_marginTop="96dp"
+        android:text="HelmetPro"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <!-- Email input -->
     <EditText
@@ -53,31 +54,38 @@
     <!-- Login button -->
 
     <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/etPassword"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="38dp"
-            android:layout_marginEnd="32dp"
-            android:background="#FFFFFF"
-            android:onClick="onLoginButtonClick"
-            android:text="Login"
-            android:textColor="#00796B"
-            android:textSize="18sp"/>
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="32dp"
+        android:background="#FFFFFF"
+        android:onClick="onLoginButtonClick"
+        android:text="Login"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorLink="#000000"
+        android:textSize="18sp"
+        app:iconTint="#FFFFFF" />
+
     <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/etPassword"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="113dp"
-            android:layout_marginEnd="32dp"
-            android:background="#FFFFFF"
-            android:onClick="onRegisterButtonClick"
-            android:text="Register"
-            android:textColor="#00796B"
-            android:textSize="18sp"/>
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="113dp"
+        android:layout_marginEnd="32dp"
+        android:background="#FFFFFF"
+        android:onClick="onRegisterButtonClick"
+        android:shadowColor="#F1E3E3"
+        android:text="Register"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:rippleColor="#E8DFDF"
+        app:strokeColor="#F4EBEB" />
 
 
 </RelativeLayout>
