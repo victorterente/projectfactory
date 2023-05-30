@@ -10,11 +10,12 @@
         android:id="@+id/textViewAppName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Helmet Pro"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:layout_marginBottom="16dp" />
+        android:text="Helmet Pro"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewEventInfo"
@@ -50,11 +51,13 @@
 
     <Button
         android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewTime"
+        android:layout_marginTop="16dp"
+        android:background="#000000"
         android:text="Register"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp" />
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 </RelativeLayout>
