@@ -72,7 +72,7 @@ public class userInfopage extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // handle API error
-                        Toast.makeText(userInfopage.this, "API error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(userInfopage.this, "Pedido de Admin Feito", Toast.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
