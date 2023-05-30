@@ -3,8 +3,12 @@ package com.example.projectfactory;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -13,14 +17,27 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Maps extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap googleMap;
     private PolylineOptions polylineOptions;
+    private Map<Marker, String> markerEventIdMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,94 +55,99 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(lisbonLatLng, 11); // Zoom level 11
         googleMap.moveCamera(cameraUpdate);
 
-        LatLng marker1LatLng = new LatLng(38.703264, -9.166665); // Coordinates for marker 1
-        LatLng marker2LatLng = new LatLng(38.692976, -9.215044); // Coordinates for marker 2
-        LatLng marker3LatLng = new LatLng(38.704887, -9.156958); // Coordinates for marker 3
-        LatLng marker4LatLng = new LatLng(38.706982, -9.133180); // Coordinates for marker 4
-        LatLng marker5LatLng = new LatLng(38.700346, -9.213880); // Coordinates for marker 5
-        LatLng marker6LatLng = new LatLng(38.707665, -9.196821); // Coordinates for marker 6
-        LatLng marker7LatLng = new LatLng(38.701887, -9.196843); // Coordinates for marker 7
-        LatLng marker8LatLng = new LatLng(38.709210, -9.168583); // Coordinates for marker 8
-        LatLng marker9LatLng = new LatLng(38.720727, -9.170396); // Coordinates for marker 9
-        LatLng marker10LatLng = new LatLng(38.711693, -9.154785); // Coordinates for marker 10
+        // Initialize the marker-eventId map
+        markerEventIdMap = new HashMap<>();
 
-        MarkerOptions markerOptions1 = new MarkerOptions()
-                .position(marker1LatLng)
-                .title("Evento 1 Inicio")
-                .snippet("Voltinha de Bike")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        // Fetch markers from the API
+        fetchMarkers();
+    }
 
-        MarkerOptions markerOptions2 = new MarkerOptions()
-                .position(marker2LatLng)
-                .title("Evento 1 Fim")
-                .snippet("Voltinha de Bike")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+    private void fetchMarkers() {
+        new Thread(() -> {
+            try {
+                URL url = new URL("https://projectfactory.fly.dev/api/eventos");
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
 
-        MarkerOptions markerOptions3 = new MarkerOptions()
-                .position(marker3LatLng)
-                .title("Evento 2 Inicio")
-                .snippet("Voltinha de Troti")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                // Read the response from the API
+                InputStream inputStream = connection.getInputStream();
+                Scanner scanner = new Scanner(inputStream);
+                StringBuilder stringBuilder = new StringBuilder();
+                while (scanner.hasNextLine()) {
+                    stringBuilder.append(scanner.nextLine());
+                }
+                String response = stringBuilder.toString();
 
-        MarkerOptions markerOptions4 = new MarkerOptions()
-                .position(marker4LatLng)
-                .title("Evento 2 Fim")
-                .snippet("Voltinha de Troti")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                // Parse the response to obtain marker coordinates
+                JSONArray jsonArray = new JSONArray(response);
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    final int index = i; // Create a final variable to capture the value of 'i'
 
-        MarkerOptions markerOptions5 = new MarkerOptions()
-                .position(marker5LatLng)
-                .title("Evento 3 Inicio")
-                .snippet("Voltinha Matinal")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                    JSONObject jsonObject = jsonArray.getJSONObject(index);
+                    double startLat = jsonObject.getDouble("evento_lat1");
+                    double startLng = jsonObject.getDouble("evento_long1");
+                    double endLat = jsonObject.getDouble("evento_lat2");
+                    double endLng = jsonObject.getDouble("evento_long2");
+                    String eventoNome = jsonObject.getString("evento_nome");
+                    String eventoId = jsonObject.getString("evento_id");
 
-        MarkerOptions markerOptions6 = new MarkerOptions()
-                .position(marker6LatLng)
-                .title("Evento 3 Fim")
-                .snippet("Voltinha Matinal")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                    LatLng startLatLng = new LatLng(startLat, startLng);
+                    LatLng endLatLng = new LatLng(endLat, endLng);
 
-        MarkerOptions markerOptions7 = new MarkerOptions()
-                .position(marker7LatLng)
-                .title("Evento 4 Inicio")
-                .snippet("Voltinha da Tarde")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
+                    // Create marker options and add markers to the map
+                    final MarkerOptions startMarkerOptions = createMarkerOptions(startLatLng, eventoNome + " Inicio");
+                    final MarkerOptions endMarkerOptions = createMarkerOptions(endLatLng, "Evento " + (index + 1) + " Fim");
 
-        MarkerOptions markerOptions8 = new MarkerOptions()
-                .position(marker8LatLng)
-                .title("Evento 4 Fim")
-                .snippet("Voltinha da Tarde")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
+                    runOnUiThread(() -> {
+                        Marker startMarker = googleMap.addMarker(startMarkerOptions);
+                        googleMap.addMarker(endMarkerOptions);
 
-        MarkerOptions markerOptions9 = new MarkerOptions()
-                .position(marker9LatLng)
-                .title("Evento 5 Inicio")
-                .snippet("Voltinha Crianças")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+                        // Create route between the markers
+                        drawRoute(startLatLng, endLatLng, getColorForIndex(index));
 
-        MarkerOptions markerOptions10 = new MarkerOptions()
-                .position(marker10LatLng)
-                .title("Evento 5 Fim")
-                .snippet("Voltinha Crianças")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+                        // Save the evento_id as the marker's tag
+                        startMarker.setTag(eventoId);
+                        // Add the marker and evento_id to the map
+                        markerEventIdMap.put(startMarker, eventoId);
+                    });
+                }
 
-        googleMap.addMarker(markerOptions1);
-        googleMap.addMarker(markerOptions2);
-        googleMap.addMarker(markerOptions3);
-        googleMap.addMarker(markerOptions4);
-        googleMap.addMarker(markerOptions5);
-        googleMap.addMarker(markerOptions6);
-        googleMap.addMarker(markerOptions7);
-        googleMap.addMarker(markerOptions8);
-        googleMap.addMarker(markerOptions9);
-        googleMap.addMarker(markerOptions10);
+                // Set a custom info window adapter for the markers
+                googleMap.setInfoWindowAdapter(new CustomInfoWindowAdapter());
 
-        // Create routes between markers with the same color
-        drawRoute(marker1LatLng, marker2LatLng, Color.BLUE);
-        drawRoute(marker3LatLng, marker4LatLng, Color.RED);
-        drawRoute(marker5LatLng, marker6LatLng, Color.GREEN);
-        drawRoute(marker7LatLng, marker8LatLng, Color.YELLOW);
-        drawRoute(marker9LatLng, marker10LatLng, Color.MAGENTA);
+                // Set a marker click listener
+                googleMap.setOnMarkerClickListener(marker -> {
+                    // Open the custom info window for the marker
+                    marker.showInfoWindow();
+                    // Return true to indicate that the marker click is handled
+                    return true;
+                });
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+    private MarkerOptions createMarkerOptions(LatLng latLng, String title) {
+        return new MarkerOptions()
+                .position(latLng)
+                .title(title)
+                .icon(BitmapDescriptorFactory.defaultMarker(getColorForTitle(title)));
+    }
+
+    private float getColorForTitle(String title) {
+        if (title.contains("Inicio")) {
+            return BitmapDescriptorFactory.HUE_BLUE;
+        } else if (title.contains("Fim")) {
+            return BitmapDescriptorFactory.HUE_RED;
+        } else {
+            return BitmapDescriptorFactory.HUE_GREEN;
+        }
+    }
+
+    private int getColorForIndex(int index) {
+        int[] colors = {Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.MAGENTA};
+        return colors[index % colors.length];
     }
 
     private void drawRoute(LatLng startLatLng, LatLng endLatLng, int color) {
@@ -137,5 +159,39 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
                 .geodesic(true);
 
         googleMap.addPolyline(polylineOptions);
+    }
+
+    private class CustomInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
+
+        private final View windowView;
+
+        CustomInfoWindowAdapter() {
+            windowView = LayoutInflater.from(Maps.this).inflate(R.layout.custom_info_window, null);
+        }
+
+        @Override
+        public View getInfoWindow(Marker marker) {
+            return null;
+        }
+
+        @Override
+        public View getInfoContents(Marker marker) {
+            if (marker.getTitle() != null && marker.getTitle().startsWith("Evento")) {
+                TextView eventNameTextView = windowView.findViewById(R.id.eventNameTextView);
+                eventNameTextView.setText(marker.getTitle());
+
+                windowView.setOnClickListener(v -> {
+                    // Get the evento_id from the marker
+                    String eventId = markerEventIdMap.get(marker);
+                    if (eventId != null) {
+                        // Start the EventInfoActivity with the evento_id
+                        Intent intent = new Intent(Maps.this, EventInfoActivity.class);
+                        intent.putExtra("evento_id", eventId);
+                        startActivity(intent);
+                    }
+                });
+            }
+            return windowView;
+        }
     }
 }
