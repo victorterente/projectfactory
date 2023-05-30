@@ -86,8 +86,8 @@ public class eventoinfo extends AppCompatActivity {
                     JSONObject eventDetails = new JSONObject(result);
                     String eventName = eventDetails.getString("evento_nome");
                     String eventDescription = eventDetails.getString("evento_descricao");
-                    String eventLat = eventDetails.getString("evento_lat");
-                    String eventLong = eventDetails.getString("evento_long");
+                    String eventLat = eventDetails.getString("evento_lat1");
+                    String eventLong = eventDetails.getString("evento_long1");
                     String eventData = eventDetails.getString("evento_data");
                     String eventStart = eventDetails.getString("evento_start");
                     String eventEnd = eventDetails.getString("evento_end");

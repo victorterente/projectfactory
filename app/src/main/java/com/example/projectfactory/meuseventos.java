@@ -1,10 +1,16 @@
 package com.example.projectfactory;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,10 +25,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class meuseventos extends AppCompatActivity {
     private ListView eventListView;
+    private ArrayAdapter<String> adapter;
+    private HashMap<String, Integer> eventIdsMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,23 @@ public class meuseventos extends AppCompatActivity {
         int userId = preferences.getInt("userId", 0);
 
         String apiUrl = "https://projectfactory.fly.dev/api/inscricoes/user/" + userId;
+
+        adapter = new EventListAdapter();
+        eventListView.setAdapter(adapter);
+
+        eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String eventName = (String) parent.getItemAtPosition(position);
+                int eventId = getEventIdByName(eventName);
+                String apiUrl = "https://projectfactory.fly.dev/api/dados/user/evento/" + userId + "/" + eventId;
+
+                // Start the activity to show event data
+                Intent intent = new Intent(meuseventos.this, EventDetailsActivity.class);
+                intent.putExtra("apiUrl", apiUrl);
+                startActivity(intent);
+            }
+        });
 
         new FetchEventsTask().execute(apiUrl);
     }
@@ -64,7 +90,9 @@ public class meuseventos extends AppCompatActivity {
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     String eventName = jsonObject.getString("evento_nome");
+                    int eventId = jsonObject.getInt("evento_id");
                     eventNames.add(eventName);
+                    eventIdsMap.put(eventName, eventId);
                 }
 
                 reader.close();
@@ -80,13 +108,45 @@ public class meuseventos extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<String> eventNames) {
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                    meuseventos.this,
-                    android.R.layout.simple_list_item_1,
-                    eventNames
-            );
-
-            eventListView.setAdapter(adapter);
+            adapter.clear();
+            adapter.addAll(eventNames);
         }
+    }
+
+    private class EventListAdapter extends ArrayAdapter<String> {
+        public EventListAdapter() {
+            super(meuseventos.this, R.layout.list_item_event, R.id.eventNameTextView, new ArrayList<>());
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = super.getView(position, convertView, parent);
+
+            String eventName = getItem(position);
+
+            TextView eventNameTextView = view.findViewById(R.id.eventNameTextView);
+            eventNameTextView.setText(eventName);
+
+            Button removeButton = view.findViewById(R.id.removeButton);
+            removeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Handle remove button click
+                    removeEvent(eventName);
+                }
+            });
+
+            return view;
+        }
+    }
+
+    private void removeEvent(String eventName) {
+        // Remove the event from the list and update the adapter
+        adapter.remove(eventName);
+        adapter.notifyDataSetChanged();
+    }
+
+    private int getEventIdByName(String eventName) {
+        return eventIdsMap.get(eventName);
     }
 }

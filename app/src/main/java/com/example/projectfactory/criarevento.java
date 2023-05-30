@@ -17,7 +17,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class CriarEvento extends Activity {
+public class criarevento extends Activity {
     private static final String API_URL = "https://projectfactory.fly.dev/api/eventos";
 
     @Override
@@ -53,8 +53,8 @@ public class CriarEvento extends Activity {
             jsonParams.put("evento_start", start);
             jsonParams.put("evento_end", end);
             jsonParams.put("evento_nome", name);
-            jsonParams.put("evento_lat", latitude);
-            jsonParams.put("evento_long", longitude);
+            jsonParams.put("evento_lat1", latitude);
+            jsonParams.put("evento_long1", longitude);
             jsonParams.put("evento_descricao", description);
             jsonParams.put("evento_data", date);
         } catch (Exception e) {
@@ -96,11 +96,11 @@ public class CriarEvento extends Activity {
         protected void onPostExecute(Integer responseCode) {
             if (responseCode == 200) {
                 // Event created successfully
-                Toast.makeText(CriarEvento.this, "Event created successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(criarevento.this, "Event created successfully", Toast.LENGTH_SHORT).show();
                 finish(); // Close the activity
             } else {
                 // Error occurred while creating event
-                Toast.makeText(CriarEvento.this, "Error creating event", Toast.LENGTH_SHORT).show();
+                Toast.makeText(criarevento.this, "Error creating event", Toast.LENGTH_SHORT).show();
             }
         }
     }
