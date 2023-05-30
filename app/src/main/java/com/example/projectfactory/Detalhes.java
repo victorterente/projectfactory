@@ -34,4 +34,9 @@ public class Detalhes extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), meuseventos.class);
         startActivity(intent);
     }
+
+    public void onClickMapaEventos(View v) {
+        Intent intent = new Intent(getApplicationContext(), Maps.class);
+        startActivity(intent);
+    }
 }
