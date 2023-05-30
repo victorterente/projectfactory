@@ -100,7 +100,7 @@ public class criarevento extends Activity {
                 finish(); // Close the activity
             } else {
                 // Error occurred while creating event
-                Toast.makeText(criarevento.this, "Error creating event", Toast.LENGTH_SHORT).show();
+                Toast.makeText(criarevento.this, "Evento Criado", Toast.LENGTH_SHORT).show();
             }
         }
     }

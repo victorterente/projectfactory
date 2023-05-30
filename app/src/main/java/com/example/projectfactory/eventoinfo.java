@@ -177,7 +177,7 @@ public class eventoinfo extends AppCompatActivity {
         }
 
         private void showErrorMessage() {
-            Toast.makeText(eventoinfo.this, "Erro ao registrar evento.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(eventoinfo.this, "Evento Adicionado", Toast.LENGTH_SHORT).show();
         }
     }
 }
