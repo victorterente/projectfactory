@@ -3,6 +3,8 @@
     package="com.example.projectfactory">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projectfactory">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA9_g9MMx2UtQvS4qQLVyc9qwqQD1CxHYo"/>
+        <activity
+            android:name=".Maps"
+            android:exported="true" />
         <activity
             android:name=".EventDetailsActivity"
             android:exported="true" />
@@ -25,6 +33,9 @@
             android:exported="true" />
         <activity
             android:name=".Detalhes"
+            android:exported="true" />
+        <activity
+            android:name=".AdminUserManagement"
             android:exported="true" />
         <activity
             android:name=".login"
