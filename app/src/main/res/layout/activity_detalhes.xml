@@ -72,4 +72,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonMeusEventos"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/adminManagementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="222dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="onCLickAdminManagement"
+        android:text="Admin Management"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMapaEventos" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
