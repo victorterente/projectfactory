@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3299D1"
+    android:background="#0888CC"
     tools:context=".Detalhes">
 
     <Button
         android:id="@+id/buttonUserInfo"
         android:layout_width="131dp"
         android:layout_height="48dp"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="124dp"
         android:layout_marginTop="52dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginEnd="156dp"
         android:autoText="true"
         android:background="#FFFFFF"
         android:contextClickable="false"
@@ -24,7 +24,6 @@
         android:textAllCaps="true"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 

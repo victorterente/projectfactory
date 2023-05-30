@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C4CBE3">
+    android:background="#0888CC">
 
     <!-- App name -->
     <!-- App name -->
@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="HelmetPro"
-        android:textColor="#2962FF"
+        android:textColor="#000000"
         android:textSize="32sp"
         android:textStyle="bold" />
 
@@ -26,8 +26,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:text="Email"
-        android:textColor="#2962FF"
-        android:textSize="18sp" />
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
     <!-- Email value -->
     <TextView
@@ -39,7 +39,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="example@example.com"
-        android:textColor="#757575"
+        android:textColor="#000000"
         android:textSize="18sp" />
 
     <!-- Password label -->
@@ -51,8 +51,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="Password"
-        android:textColor="#2962FF"
-        android:textSize="18sp" />
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
     <!-- Password value -->
     <TextView
@@ -64,7 +64,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="******"
-        android:textColor="#757575"
+        android:textColor="#000000"
         android:textSize="18sp" />
 
     <!-- Name label -->
@@ -76,8 +76,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="Name"
-        android:textColor="#2962FF"
-        android:textSize="18sp" />
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
     <!-- Name value -->
     <TextView
@@ -88,33 +88,34 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:text="John Doe"
-        android:textColor="#757575"
+        android:textColor="#000000"
         android:textSize="18sp"
 
         />
 
     <Button
-            android:id="@+id/btnRequestModeratorPermission"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvNameValue"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp"
-            android:background="#2962FF"
-            android:text="Request Moderator Permission"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"/>
+        android:id="@+id/btnRequestModeratorPermission"
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNameValue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        android:text="Request Moderator Permission"
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
     <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnRequestModeratorPermission"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:background="#FF0000"
-            android:text="Logout"
-            android:textColor="#000000"
-            android:textSize="18sp" android:onClick="onClickLogout"/>
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnRequestModeratorPermission"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="#000000"
+        android:onClick="onClickLogout"
+        android:text="Logout"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
 
 </RelativeLayout>
