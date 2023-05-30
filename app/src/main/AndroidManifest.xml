@@ -29,7 +29,7 @@
             android:name=".eventlist"
             android:exported="true" />
         <activity
-            android:name=".CriarEvento"
+            android:name=".criarevento"
             android:exported="true" />
         <activity
             android:name=".Detalhes"

@@ -38,4 +38,9 @@ public class Detalhes extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), AdminUserManagement.class);
         startActivity(intent);
     }
+
+    public void onClickCriarEvento(View v) {
+        Intent intent = new Intent(getApplicationContext(), criarevento.class);
+        startActivity(intent);
+    }
 }
