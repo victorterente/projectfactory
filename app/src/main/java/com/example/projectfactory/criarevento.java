@@ -42,6 +42,12 @@ public class criarevento extends Activity {
         EditText editLongitude = findViewById(R.id.edit_longitude);
         String longitude = editLongitude.getText().toString();
 
+        EditText editLatitude1 = findViewById(R.id.edit_latitude2);
+        String latitude1 = editLatitude1.getText().toString();
+
+        EditText editLongitude1 = findViewById(R.id.edit_longitude2);
+        String longitude1 = editLongitude1.getText().toString();
+
         EditText editDescription = findViewById(R.id.edit_description);
         String description = editDescription.getText().toString();
 
@@ -55,6 +61,8 @@ public class criarevento extends Activity {
             jsonParams.put("evento_nome", name);
             jsonParams.put("evento_lat1", latitude);
             jsonParams.put("evento_long1", longitude);
+            jsonParams.put("evento_lat2", latitude1);
+            jsonParams.put("evento_long2", longitude1);
             jsonParams.put("evento_descricao", description);
             jsonParams.put("evento_data", date);
         } catch (Exception e) {
