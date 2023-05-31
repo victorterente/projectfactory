@@ -7,14 +7,52 @@
 
     <TextView
         android:id="@+id/text_header"
-        android:layout_width="match_parent"
+        android:layout_width="391dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="right"
         android:padding="16dp"
         android:text="Helmet Pro"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_create_event"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_longitude"
+        android:layout_marginTop="-565dp"
+        android:background="#FFFFFF"
+        android:onClick="createEvent"
+        android:text="Create Event"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/text_longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_latitude"
+        android:text="Initial Longitude:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_longitude2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_latitude"
+        android:layout_marginTop="144dp"
+        android:text="Final Longitude:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_latitude2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_latitude"
+        android:layout_marginTop="70dp"
+        android:text="Final Latitude:"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/text_start"
@@ -23,7 +61,7 @@
         android:layout_below="@id/text_header"
         android:text="Start Time:"
         android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/edit_start"
@@ -40,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_start"
         android:text="End Time:"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/edit_end"
@@ -57,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_end"
         android:text="Event Name:"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/edit_name"
@@ -74,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_name"
         android:text="Event Date:"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/edit_date"
@@ -91,7 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_date"
         android:text="Event Description:"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/edit_description"
@@ -107,8 +145,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_description"
-        android:text="Latitude:"
-        android:textSize="20sp" />
+        android:text="Initial Latitude:"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/edit_latitude"
@@ -119,13 +157,15 @@
         android:minHeight="48dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/text_longitude"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edit_latitude2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_latitude"
-        android:text="Longitude:"
-        android:textSize="20sp" />
+        android:layout_below="@id/text_latitude"
+        android:layout_marginTop="147dp"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/edit_longitude"
@@ -136,17 +176,16 @@
         android:minHeight="48dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/button_create_event"
+    <EditText
+        android:id="@+id/edit_longitude2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_longitude"
-        android:layout_marginTop="0dp"
-        android:background="#FFFFFF"
-        android:onClick="createEvent"
-        android:text="Create Event"
-        android:textColor="#000000"
-        android:textSize="20sp" />
+        android:layout_below="@id/text_longitude"
+        android:layout_marginTop="143dp"
+        android:inputType="date|numberDecimal"
+        android:minHeight="48dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <!-- Add any buttons or additional elements as needed -->
 
 </RelativeLayout>
