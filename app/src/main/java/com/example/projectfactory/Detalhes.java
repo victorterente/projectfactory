@@ -86,7 +86,7 @@ public class Detalhes extends AppCompatActivity {
             button1.setVisibility(View.VISIBLE);
             button2.setVisibility(View.VISIBLE);
             button3.setVisibility(View.VISIBLE);
-            button4.setVisibility(View.GONE);
+            button4.setVisibility(View.VISIBLE);
             button5.setVisibility(View.GONE);
             button6.setVisibility(View.GONE);
         }
